@@ -35,6 +35,7 @@ Ensure you have the following installed:
 - The measurement outcomes are plotted as a histogram.
 
 ## 📊 Output
+![Quantum Teleportation](teleportation_histogram.py)
 
 
 ## 🏗️ Future Enhancements
