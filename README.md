@@ -38,11 +38,15 @@ Matplotlib (for visualization)
 🔹 The histogram of measurement outcomes is generated.
 🔹 The circuit diagram is displayed for clarity.
 
-## 📊 Expected Output
+## 📊 Expected Output  
+Here’s the **Quantum Teleportation Circuit Diagram** and **Measurement Histogram** from the simulation:  
 
-![Quantum Teleportation Circuit](images/circuit_diagram.png)
+### **🔹 Circuit Diagram**  
+![Quantum Teleportation Circuit](./circuit_diagram.png)  
 
-![Quantum Teleportation Circuit](images/histogram.png)
+### **🔹 Measurement Histogram**  
+![Measurement Histogram](./histogram.png)  
+
 
 
 
