@@ -1,49 +1,55 @@
 # 🔗 Quantum Teleportation Simulation
-
-This project simulates **Quantum Teleportation** using **Qiskit**. It demonstrates how quantum information can be transferred between two parties (Alice & Bob) using entanglement and classical communication.
+This project simulates Quantum Teleportation using Qiskit, demonstrating how quantum information can be transferred between two parties (Alice & Bob) using entanglement and classical communication.
 
 ## 📌 Features
-- Implements **Quantum Teleportation** for a **1-qubit quantum state**.
-- Uses **entanglement and classical communication** for state transfer.
-- Runs on the **Qiskit AerSimulator**.
-- Displays a **histogram** of measurement results.
+✅ Implements Quantum Teleportation for an arbitrary 1-qubit quantum state.
+✅ Uses entanglement and classical communication for state transfer.
+✅ Runs on the Qiskit AerSimulator for fast and accurate results.
+✅ Generates a circuit diagram and a histogram of measurement results for visualization.
 
 ## 🛠️ Requirements
-Ensure you have the following installed:
+Make sure you have the following installed:
 
-- Python (>=3.8)
-- Qiskit (>=1.2)
-- Matplotlib (for visualization)
+Python (>=3.8)
 
-## 📜 Code Explanation
-1. Entanglement Setup:
-- Creates a 3-qubit quantum circuit.
-- Qubit 1 and 2 are entangled using a Hadamard & CNOT gate.
+Qiskit (>=1.2)
 
-2. Quantum State Preparation:
-- Alice prepares a qubit (qubit 0) in a random state.
+Matplotlib (for visualization)
 
-3. Teleportation Protocol:
-- Alice applies CNOT & Hadamard gates, then measures qubits.
-- Measurement results are sent classically to Bob.
-  
-4. Bob's Correction:
-- Bob applies the correct quantum gates based on Alice’s results.
-- The original quantum state is successfully reconstructed at Bob’s side.
+## 📜 Code Overview
+1️⃣ Entanglement Setup
+🔹 A 3-qubit quantum circuit is created.
+🔹 Qubit 1 and 2 are entangled using a Hadamard + CNOT gate.
 
-5. Results & Visualization:
-- The measurement outcomes are plotted as a histogram.
+2️⃣ Quantum State Preparation
+🔹 Alice prepares qubit 0 in an arbitrary quantum state.
+🔹 A Hadamard gate puts it in superposition, and an Rz(π/4) gate applies an additional phase rotation.
 
-## 📊 Output
-![Quantum Teleportation](teleportation_histogram.png)
+3️⃣ Teleportation Protocol
+🔹 Alice applies a CNOT + Hadamard transformation.
+🔹 Alice measures her qubits, collapsing the quantum state.
+🔹 The measurement results are sent classically to Bob.
+
+4️⃣ Bob’s Correction
+🔹 Bob applies conditional quantum gates (X & Z) based on Alice’s measurements.
+🔹 The original quantum state is successfully reconstructed at Bob’s side.
+
+5️⃣ Results & Visualization
+🔹 The histogram of measurement outcomes is generated.
+🔹 The circuit diagram is displayed for clarity.
+
+## 📊 Expected Output
+
+![Quantum Teleportation Circuit](images/circuit_diagram.png)
+
+![Quantum Teleportation Circuit](images/histogram.png)
 
 
-## 🏗️ Future Enhancements
-- Extend teleportation to multi-qubit states.
-- Implement real quantum hardware execution.
-- Add a GUI interface to visualize the teleportation process.
 
-  
-## 📜 License
-- This project is licensed under the MIT License.
+🏗️ Future Enhancements
+🚀 Extend teleportation to multi-qubit quantum states.
+🚀 Implement teleportation on IBM's real quantum hardware.
+🚀 Add a GUI interface to visualize the teleportation process interactively.
 
+📜 License
+This project is licensed under the MIT License.
