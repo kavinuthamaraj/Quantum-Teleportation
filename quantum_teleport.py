@@ -1,46 +1,35 @@
-from qiskit import QuantumCircuit, transpile, assemble
-from qiskit_aer import AerSimulator  # ✅ FIXED: Import from qiskit_aer
+from qiskit import QuantumCircuit, transpile
+from qiskit_aer import Aer
 from qiskit.visualization import plot_histogram
 import matplotlib.pyplot as plt
 
-#Quantum Circuit - 3 qubits and 3 classical bits
-qc = QuantumCircuit(3, 3)
 
-#Entanglement btwn qb1 & qb2
-qc.h(1)
-qc.cx(1, 2)
+qc = QuantumCircuit(3, 2)
 
 
-qc.x(0)  #Modify Intial State
+qc.h(1)  
+qc.cx(1, 2)  
 
-#Alice - Applies teleportation protocol
+qc.h(0)
 qc.cx(0, 1)
 qc.h(0)
+qc.measure(0, 0)
+qc.measure(1, 1)
 
-#Alice's qubits
-qc.measure([0, 1], [0, 1])
-
-#Bob - Classical communication
 qc.cx(1, 2)
 qc.cz(0, 2)
+qc.draw('mpl')
+plt.show()
 
-#Bob's qubit
-qc.measure(2, 2)
-
-
-simulator = AerSimulator()
-
-# Transpile & Execute 
-compiled_circuit = transpile(qc, simulator)
-job = simulator.run(compiled_circuit)  # ✅ FIXED: Using `run()`
+backend = Aer.get_backend('qasm_simulator')
+compiled_circuit = transpile(qc, backend)
+job = backend.run(compiled_circuit, shots=1000)  # <-- FIXED LINE
 result = job.result()
-
-
-counts = result.get_counts(qc)
-
+counts = result.get_counts()
 
 print("Quantum Teleportation Results:", counts)
 
-#Histogram
+# Result as Histogram
 plot_histogram(counts)
 plt.show()
+
